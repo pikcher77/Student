@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Проверка на палиндром</title>
+        <body>
+            <script>
+                let familia = prompt('Введите вашу фамилию');
+                let familia1 = familia.split('').reverse().join('');
+                if (familia1 === familia) {
+                    alert('Ваша фамилия подходит под палиндром');
+                }
+                if (familia1 !== familia)
+                alert('Ваша фамилия не подходит под палиндром');
+            </script>
+        </body>
+    </head>
+</html>

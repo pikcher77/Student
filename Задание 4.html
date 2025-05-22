@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Факториал числа</title>
+        <body>
+            <script>
+                let itog = 1;
+                let nextchislo=1;
+                let chislo = prompt('Введите ваш порядковый номер:');
+                if (chislo <= 0) {
+                    alert('Вы ввели не ваш порядковый номер')
+                } 
+                    while (nextchislo < chislo) {
+                        nextchislo++;
+                        itog = nextchislo * itog;
+                    }
+                    alert(itog);
+            </script>
+        </body>
+    </head>
+</html>
