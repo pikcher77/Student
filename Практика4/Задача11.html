@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Пары</title>
+</head>
+<body>
+    <script>
+        function objectToPairs(man) {
+            return Object.entries(man);
+        }
+
+        const man = {
+            name: "Аня",
+            age: 22,
+            city: "Москва"
+        };
+
+        const pairs = objectToPairs(man);
+
+        for (let pair of pairs) {
+            document.write(`[${pair[0]}, ${pair[1]}]<br>`);
+        }
+    </script>
+</body>
+</html>

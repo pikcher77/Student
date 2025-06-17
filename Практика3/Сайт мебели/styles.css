@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+header {
+    background-color: #4444aa;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+.cart {
+    font-size: 18px;
+}
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px;
+}
+.controls input, .controls select {
+    padding: 5px;
+    font-size: 16px;
+}
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+main {
+    flex: 3;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+aside {
+    flex: 1;
+    background-color: #ddd;
+    padding: 20px;
+}
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+aside li {
+    margin-bottom: 10px;
+}
+aside a {
+    text-decoration: none;
+    color: #333;
+}
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+.product-card {
+    background-color: #d8d8f0;
+    border: 2px solid #aaa;
+    width: 200px;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.product-number {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.product-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.product-info h2 {
+    font-size: 16px;
+    margin: 5px 0;
+    text-align: center;
+}
+.product-info p {
+    margin: 5px 0;
+}
+button {
+    padding: 5px 10px;
+    background-color: #4444aa;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+footer {
+    background-color: #444;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    position: relative;
+}
+.close-btn, .close-contact {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.hidden {
+    display: none;
+}
+.quantity-controls {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+    aside {
+        order: -1;
+    }
+}

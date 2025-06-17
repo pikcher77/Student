@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Копирование отличающихся свойств</title>
+</head>
+<body>
+    <script>
+        const obj1 = {
+            name: "Анна",
+            age: 25,
+            city: "Москва"
+        };
+
+        const obj2 = {
+            name: "Анна",
+            age: 30,
+            city: "Санкт-Петербург"
+        };
+
+        for (let key in obj1) {
+            if (obj1[key] !== obj2[key]) {
+                obj2[key] = obj1[key];
+            }
+        }
+
+        for (let key in obj2) {
+            document.write(`<p>${key}: ${obj2[key]}</p>`);
+        }
+    </script>
+</body>
+</html>

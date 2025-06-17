@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Задача 1</title>
+</head>
+<body>
+   <script>
+// 1. Declaration (Объявление функции)
+function getPagesPerMinuteDeclaration() {
+    const timeFirst = 10;
+    const timeSecond = 15;
+    const totalPages = 340;
+    const diffPagesPerMin = 4;
+
+    // Решаем уравнение
+    const x = (totalPages - diffPagesPerMin * timeFirst) / (timeSecond + timeFirst);
+    const firstMachine = x + diffPagesPerMin;
+    const secondMachine = x;
+
+    return {
+        first: firstMachine,
+        second: secondMachine
+    };
+}
+alert("Declaration: " + 
+      "Первая машина печатает " + getPagesPerMinuteDeclaration().first + " стр/мин, " +
+      "вторая — " + getPagesPerMinuteDeclaration().second + " стр/мин.");
+
+// 2. Function Expression (Функциональное выражение)
+const getPagesPerMinuteExpression = function() {
+    const timeFirst = 10;
+    const timeSecond = 15;
+    const totalPages = 340;
+    const diffPagesPerMin = 4;
+
+    const x = (totalPages - diffPagesPerMin * timeFirst) / (timeSecond + timeFirst);
+    return {
+        first: x + diffPagesPerMin,
+        second: x
+    };
+};
+alert("Expression: " +
+      "Первая машина печатает " + getPagesPerMinuteExpression().first + " стр/мин, " +
+      "вторая — " + getPagesPerMinuteExpression().second + " стр/мин.");
+
+// 3. Arrow function
+const getPagesPerMinuteArrow = () => {
+    const timeFirst = 10;
+    const timeSecond = 15;
+    const totalPages = 340;
+    const diffPagesPerMin = 4;
+
+    const x = (totalPages - diffPagesPerMin * timeFirst) / (timeSecond + timeFirst);
+    return {
+        first: x + diffPagesPerMin,
+        second: x
+    };
+};
+alert("Arrow: " +
+      "Первая машина печатает " + getPagesPerMinuteArrow().first + " стр/мин, " +
+      "вторая — " + getPagesPerMinuteArrow().second + " стр/мин.");
+
+// 4. Функция с параметрами и return
+function calculatePrintRates(totalPages, timeFirst, timeSecond, diff) {
+    // Решаем уравнение
+    const x = (totalPages - diff * timeFirst) / (timeSecond + timeFirst);
+    return {
+        first: x + diff,
+        second: x
+    };
+}
+
+function getPrintRatesWithParams() {
+    return calculatePrintRates(340,10,15,4);
+}
+alert("С параметрами: " +
+      "Первая машина печатает " + getPrintRatesWithParams().first + 
+      " стр/мин, вторая — " + getPrintRatesWithParams().second + " стр/мин.");
+   </script>
+</body>
+</html>

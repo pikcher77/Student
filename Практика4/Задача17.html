@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Уникальные числовые свойства</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            a: 10,
+            b: 20,
+            c: 10,
+            d: 30,
+            e: "не число",
+            f: 40,
+            g: 30
+        };
+
+        const valuesCount = {};
+        for (let key in obj) {
+            if (typeof obj[key] === "number") {
+                const value = obj[key];
+                valuesCount[value] = (valuesCount[value] || 0) + 1;
+            }
+        }
+
+        document.write("<h3>Уникальные числовые свойства:</h3>");
+        for (let key in obj) {
+            const value = obj[key];
+            if (typeof value === "number" && valuesCount[value] === 1) {
+                document.write(`<b>${key}</b>: ${value}<br>`);
+            }
+        }
+    </script>
+</body>
+</html>

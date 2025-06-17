@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Задача 1</title>
+</head>
+<body>
+   <script>
+// 1. Declaration function
+function findAnyaTimeDeclaration() {
+    const T_total = 36;
+    const T_tanya = 117;
+    const R_total = 1 / T_total;
+    const R_tanya = 1 / T_tanya;
+    const R_anya = R_total - R_tanya;
+    const T_anya = 1 / R_anya;
+    return T_anya;
+}
+alert("Declaration: Аня пропалывает за " + findAnyaTimeDeclaration() + " минут");
+
+// 2. Function Expression
+const findAnyaTimeExpression = function() {
+    const T_total = 36;
+    const T_tanya = 117;
+    const R_total = 1 / T_total;
+    const R_tanya = 1 / T_tanya;
+    const R_anya = R_total - R_tanya;
+    return 1 / R_anya;
+};
+alert("Expression: Аня пропалывает за " + findAnyaTimeExpression() + " минут");
+
+// 3. Arrow function
+const findAnyaTimeArrow = () => {
+    const T_total = 36;
+    const T_tanya = 117;
+    const R_total = 1 / T_total;
+    const R_tanya = 1 / T_tanya;
+    const R_anya = R_total - R_tanya;
+    return 1 / R_anya;
+};
+alert("Arrow: Аня пропалывает за " + findAnyaTimeArrow() + " минут");
+
+// 4. Функция с параметрами и return
+function calculateAnyaTime(totalTime, tanyaTime) {
+    const R_total = 1 / totalTime;
+    const R_tanya = 1 / tanyaTime;
+    const R_anya = R_total - R_tanya;
+    return Math.round(1 / R_anya);
+}
+
+function getAnyaTime() {
+    return calculateAnyaTime(36,117);
+}
+alert("С параметрами: Аня пропалывает за " + getAnyaTime() + " минут");
+   </script>
+</body>
+</html>

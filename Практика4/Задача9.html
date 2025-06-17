@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Статус чтения</title>
+</head>
+<body>
+    <script>
+    const info = [
+        {
+            book: 'Война и Мир',
+            author: 'Лев Толстой',
+            reading: true,
+        },
+
+        {
+            book: 'Стихи Пушкина',
+            author: 'Александр Пушкин',
+            reading: false,
+        },
+
+        {
+            book: 'Стихи Лермонтова',
+            author: 'Михаил Лермонтов',
+            reading: true,
+        },
+    ]
+    for(let reader of info) {
+        const status = reader.reading ? 'Читает' : 'Не читает';
+        alert(`Автор: ${reader.author} // Название: ${reader.book} // Статус: ${status}`);
+    }
+
+    </script>
+</body>
+</html>

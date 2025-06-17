@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Оптимальный выбор билетов</title>
+</head>
+<body>
+    <script>
+        const n = parseInt(prompt("Введите количество поездок:"));
+
+        const cost1 = 15;
+        const cost10 = 125;
+        const cost60 = 440;
+
+        let minTotalCost = Infinity;
+        let best = { t1: 0, t10: 0, t60: 0 };
+
+        for (let t60 = 0; t60 <= Math.ceil(n / 60); t60++) {
+            for (let t10 = 0; t10 <= Math.ceil((n - 60 * t60) / 10) + 1; t10++) {
+                let totalTrips = 60 * t60 + 10 * t10;
+                if (totalTrips > n) {
+                    var t1 = 0;
+                } else {
+                    var t1 = n - totalTrips;
+                }
+
+                let cost = t60 * cost60 + t10 * cost10 + t1 * cost1;
+
+                if (cost < minTotalCost) {
+                    minTotalCost = cost;
+                    best = { t1, t10, t60 };
+                }
+            }
+        }
+
+        document.write(`<p>Минимальная стоимость: ${minTotalCost} руб.</p>`);
+        document.write(`<p>Билеты на 1 поездку: <b>${best.t1}</b></p>`);
+        document.write(`<p>Билеты на 10 поездок: <b>${best.t10}</b></p>`);
+        document.write(`<p>Билеты на 60 поездок: <b>${best.t60}</b></p>`);
+    </script>
+</body>
+</html>

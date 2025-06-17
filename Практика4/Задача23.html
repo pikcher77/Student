@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Умножение на случайное число</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            a: 10,
+            b: "строка",
+            c: 25,
+            d: 5,
+            e: true,
+            f: 40
+        };
+
+        let numbers = [];
+
+        for (let key in obj) {
+            if (typeof obj[key] === "number") {
+                numbers.push(obj[key]);
+            }
+        }
+
+        if (numbers.length === 0) {
+            document.write("Нет числовых свойств.");
+        } else {
+            const min = Math.min(...numbers);
+            const max = Math.max(...numbers);
+
+            for (let key in obj) {
+                if (typeof obj[key] === "number") {
+                   
+                    const random = Math.random() * (max - min) + min;
+                    obj[key] *= random;
+                }
+            }
+
+            for (let key in obj) {
+                document.write(`<p>${key}: ${obj[key]}</p>`);
+            }
+        }
+    </script>
+</body>
+</html>

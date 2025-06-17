@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Жарка котлет</title>
+</head>
+<body>
+    <script>
+        const k = parseInt(prompt("Сколько котлет помещается на сковородке одновременно (k)?"));
+        const m = parseInt(prompt("Сколько минут нужно жарить одну сторону котлеты (m)?"));
+        const n = parseInt(prompt("Сколько всего котлет (n)?"));
+
+        const totalSides = n * 2; 
+        const turns = Math.ceil(totalSides / k); 
+        const totalTime = turns * m; 
+
+        document.write(`<p>Минимальное время для жарки всех котлет: <b>${totalTime} минут</b></p>`);
+    </script>
+</body>
+</html>

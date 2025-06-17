@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Задача 1</title>
+</head>
+<body>
+   <script>
+// 1. Declaration (Объявление функции)
+function getForceDeclaration() {
+    const m = 50;
+    const g = 9.8;
+    const R = 0.2;
+    const l = 1;
+
+    const F = m * g * (R / (2 * l));
+    return F;
+}
+alert("Declaration: Необходимая сила для подъема якоря: " + getForceDeclaration().toFixed(2) + " Н");
+
+// 2. Function Expression (Функциональное выражение)
+const getForceExpression = function() {
+    const m = 50;
+    const g = 9.8;
+    const R = 0.2;
+    const l = 1;
+
+    const F = m * g * (R / (2 * l));
+    return F;
+};
+alert("Expression: Необходимая сила для подъема якоря: " + getForceExpression().toFixed(2) + " Н");
+
+// 3. Arrow function
+const getForceArrow = () => {
+    const m = 50;
+    const g = 9.8;
+    const R = 0.2;
+    const l = 1;
+
+    return m * g * (R / (2 * l));
+};
+alert("Arrow: Необходимая сила для подъема якоря: " + getForceArrow().toFixed(2) + " Н");
+
+// 4. Функция с параметрами и return
+function calculateForce(mass, gravity, radius, length) {
+    return mass * gravity * (radius / (2 * length));
+}
+
+function getForceWithParams() {
+    return calculateForce(50, 9.8, 0.2, 1);
+}
+alert("С параметрами: Необходимая сила для подъема якоря: " + getForceWithParams().toFixed(2) + " Н");
+   </script>
+</body>
+</html>

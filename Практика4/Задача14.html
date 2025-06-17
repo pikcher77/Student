@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Удаление свойства по значению</title>
+</head>
+<body>
+    <script>
+        const man = {
+            name: "Аня",
+            age: 22,
+            city: "Москва"
+        };
+
+        const ToDelete = prompt("Введите значение, по которому нужно удалить свойство:");
+
+        for (let svoystvo in man) {
+            if (man[svoystvo] == ToDelete) {
+                delete man[svoystvo];
+                alert(`Свойство "${svoystvo}" удалено.`);
+                break;
+            }
+        }
+        for (let svoystvo in man) {
+            document.write(` ${svoystvo} : ${man[svoystvo]} `);
+        }
+
+    </script>
+</body>
+</html>

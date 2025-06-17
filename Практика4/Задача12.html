@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Проверка свойства в объекте</title>
+</head>
+<body>
+    <script>
+        const person = {
+            name: "Аня",
+            age: 22,
+            city: "Москва"
+        };
+
+        function hasProperty(obj, key) {
+            return obj.hasOwnProperty(key);
+        }
+
+        const input = prompt("Введите имя свойства, которое хотите проверить:");
+
+        if (hasProperty(person, input)) {
+            alert(`Свойство "${input}" есть в объекте. Значение: ${person[input]}`);
+        } else {
+            alert(`Свойства "${input}" нет в объекте.`);
+        }
+    </script>
+</body>
+</html>

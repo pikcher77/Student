@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вывод свойств АВТО</title>
+</head>
+<body>
+    <script>
+    const car = {
+        brand: 'BMW',
+        model: '7-series',
+        year: '2007',
+        color: 'black',
+        transmission: 'automatic',
+    };
+
+    const svoystva = Object.keys(car).sort(() => Math.random() - 0.5);
+
+    for (let svoystvo of svoystva) {
+        alert(`${svoystvo} : ${car[svoystvo]}`);
+    }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Фильтры</title>
+</head>
+<body>
+    <script>
+        const users = [
+            { name: "Аня", age: 25 },
+            { name: "Борис", age: 19 },
+            { name: "Вика", age: 30 }
+        ];
+
+        users.sort((a, b) => a.age - b.age);
+
+        for (let user of users) {
+            document.write(` Имя: ${user.name}, Возраст: ${user.age} //`);
+        }
+    </script>
+</body>
+</html>

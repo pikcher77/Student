@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Проверка високосного года и месяца</title>
+</head>
+<body>
+    <h2>Проверка високосного года и месяца с 31 днем</h2>
+    <label for="year">Введите год:</label>
+    <input type="number" id="year" placeholder="Например, 2025" />
+    <br /><br />
+    <label for="month">Введите месяц (числом):</label>
+    <input type="number" id="month" placeholder="1-12" />
+    <br /><br />
+    <button onclick="checking()">Проверить</button>
+    <p id="result"></p>
+
+    <script>
+        function checking() {
+            const yearInput = document.getElementById('year').value;
+            const monthInput = document.getElementById('month').value;
+            const res = document.getElementById('result');
+
+            const year = parseInt(yearInput);
+            const month = parseInt(monthInput);
+
+            if (isNaN(year) || isNaN(month) || month < 1 || month > 12) {
+                res.textContent = 'Пожалуйста, введите корректный год и месяц (1-12).';
+                return;
+            }
+
+            const Vyear = (year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0);
+
+            const days = [31, (Vyear ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+            if (days[month -1] === 31) {
+                res.textContent = `Год ${year} ${Vyear ? 'високосный' : 'не високосный'}. Месяц ${month} имеет 31 день.`;
+            } else {
+                res.textContent = `Год ${year} ${Vyear ? 'високосный' : 'не високосный'}. Месяц ${month} не имеет 31 день.`;
+            }
+        }
+    </script>
+</body>
+</html>

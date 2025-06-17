@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Минимальная строка</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            a: "яблоко",
+            b: "груша",
+            c: "банан",
+            d: 123,
+            e: true,
+            f: "арбуз"
+        };
+
+        let minStr = null;
+        let minKey = "";
+
+        for (let key in obj) {
+            if (typeof obj[key] === "string") {
+                if (minStr === null || obj[key] < minStr) {
+                    minStr = obj[key];
+                    minKey = key;
+                }
+            }
+        }
+
+        if (minStr !== null) {
+            document.write(`<p>Наименьшее строковое свойство: <b>${minKey}</b> = ${minStr}</p>`);
+        } else {
+            document.write("<p>В объекте нет строковых свойств.</p>");
+        }
+    </script>
+</body>
+</html>

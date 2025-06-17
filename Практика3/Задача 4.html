@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Задача 1</title>
+</head>
+<body>
+   <script>
+// 1. Declaration function
+function fillTimeSecondPipeDeclaration() {
+    const T1 = 12;
+    const T_total = 8;
+    const R1 = 1 / T1;
+    const R_total = 1 / T_total;
+    const R2 = R_total - R1;
+    const T2 = 1 / R2;
+    return T2;
+}
+alert("Declaration: Время второй трубы: " + fillTimeSecondPipeDeclaration() + " часов");
+
+// 2. Function Expression
+const fillTimeSecondPipeExpression = function() {
+    const T1 = 12;
+    const T_total = 8;
+    const R1 = 1 / T1;
+    const R_total = 1 / T_total;
+    const R2 = R_total - R1;
+    const T2 = 1 / R2;
+    return T2;
+};
+alert("Expression: Время второй трубы: " + fillTimeSecondPipeExpression() + " часов");
+
+// 3. Arrow function
+const fillTimeSecondPipeArrow = () => {
+    const T1 = 12;
+    const T_total = 8;
+    const R1 = 1 / T1;
+    const R_total = 1 / T_total;
+    const R2 = R_total - R1;
+    return 1 / R2; // возвращаем время
+};
+alert("Arrow: Время второй трубы: " + fillTimeSecondPipeArrow() + " часов");
+
+// 4. Функция с параметрами и return
+function calculateFillTime(T_first, total_time) {
+    const R_first = 1 / T_first;
+    const R_total = 1 / total_time;
+    const R_second = R_total - R_first;
+    return 1 / R_second; // время второй трубы
+}
+
+function getSecondPipeTime() {
+    return calculateFillTime(12,8);
+}
+alert("С параметрами: Время второй трубы: " + getSecondPipeTime() + " часов");
+   </script>
+</body>
+</html>

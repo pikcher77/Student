@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<title>Студенты</title>
+</head>
+<body>
+<h2>Информация о студентах</h2>
+<button id="show">Показать студентов</button>
+<div id="result"></div>
+<script>
+const students = [
+    {
+        name: "Криштиану Роналду",
+        group: 206,
+        grades: [5, 4, 5]
+    },
+    {
+        name: "Лео Месси",
+        group: 206,
+        grades: [3, 4, 3]
+    },
+    {
+        name: "Неймар Джуниор",
+        group: 206,
+        grades: [4, 4, 4]
+    }
+];
+
+function showStudents() {
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = ""; 
+
+    const filteredStudents = students.filter(student => {
+        const sumGrades = student.grades.reduce((sum, g) => sum + g, 0);
+        const avgGrade = sumGrades / student.grades.length;
+        return avgGrade > 4;
+    });
+
+    if (filteredStudents.length === 0) {
+        resultDiv.innerHTML = "<p>Нет студентов с средним баллом выше 4.0.</p>";
+    } else {
+        const list = document.createElement('ul');
+        filteredStudents.forEach(student => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `Фамилия и инициалы: ${student.name}, Группа: ${student.group}`;
+            list.appendChild(listItem);
+        });
+        resultDiv.appendChild(list);
+    }
+}
+
+document.getElementById('show').addEventListener('click', showStudents);
+</script>
+
+</body>
+</html>

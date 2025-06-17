@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Умножение свойств объекта</title>
+</head>
+<body>
+    <script>
+        const man = {
+            a: 2,
+            b: 3,
+            c: "не число",
+            d: 4
+        };
+
+        function multiplyNumericProps(obj) {
+            let result = 1;
+            let hasNumber = false;
+
+            for (let key in obj) {
+                if (typeof obj[key] === "number") {
+                    result *= obj[key];
+                    hasNumber = true;
+                }
+            }
+
+            return hasNumber ? result : null;
+        }
+
+        const userNumber = Number(prompt("Введите число для сравнения:"));
+        const multiplied = multiplyNumericProps(man);
+
+        if (multiplied === null) {
+            document.write("В объекте нет числовых свойств.");
+        } else {
+            document.write(`<p>Произведение чисел: <b>${multiplied}</b></p>`);
+            if (multiplied === userNumber) {
+                document.write("<p>Результат <b>совпадает</b> с введённым числом.</p>");
+            } else {
+                document.write("<p>Результат <b>не совпадает</b> с введённым числом.</p>");
+            }
+        }
+    </script>
+</body>
+</html>

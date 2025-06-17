@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Проверка первой буквы</title>
+</head>
+<body>
+  <script>
+    const vvod = prompt("Введите строку:");
+
+    const proverka = {
+      text: vvod,
+      flag: false
+    };
+
+    // Проверка, начинается ли строка с буквы 'a'
+    if (proverka.text.charAt(0) === 'a') {
+      proverka.flag = true;
+    } else {
+        proverka.flag = false;
+    }
+    alert(proverka.flag);
+  </script>
+</body>
+</html>

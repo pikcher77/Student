@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Преобразование объекта в массив</title>
+</head>
+<body>
+    <script>
+        const item = {
+            name: "Ручка",
+            price: 50,
+            color: "blue",
+            type: "гелевая"
+        };
+
+        let result = [];
+
+        if (item.color === "blue") {
+            result = Object.values(item);
+        }
+
+        document.write("<b>Результат:</b><br>");
+        result.forEach(value => document.write(value + "<br>"));
+    </script>
+</body>
+</html>

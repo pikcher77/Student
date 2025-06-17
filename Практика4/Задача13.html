@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Описание городов</title>
+</head>
+<body>
+    <script>
+        const city1 = {
+            name: "Москва",
+            population: 20000000,
+            country: "Россия",
+            describe: function() {
+                return `Город ${this.name}, страна: ${this.country}, население: ${this.population}`;
+            }
+        };
+        
+        const city2 = {
+            name: "Лондон",
+            population: 14000000,
+            country: "Великобритания",
+            describe: function() {
+                return `Город ${this.name}, страна: ${this.country}, население: ${this.population}`;
+            }
+        };
+
+        alert(city1.describe());
+        alert(city2.describe());
+    </script>
+</body>
+</html>

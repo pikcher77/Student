@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Задача 1</title>
+</head>
+<body>
+   <script>
+function FunctionDeclaration() {
+    const questions = (() => {
+        const timeGriha = 60;
+        const timeArtem = timeGriha + 60;
+        const questionsArtemZaMinute = 14 / 60;
+        return questionsArtemZaMinute * timeArtem;
+    })();
+    return questions;
+}
+alert("Declaration: " + FunctionDeclaration());
+
+const FunctionExpression = function() {
+    const timeGriha = 60;
+    const timeArtem = timeGriha + 60;
+    const questionsArtemPerMinute = 14 / 60;
+    const questionsCount = questionsArtemPerMinute * timeArtem;
+    return questionsCount;
+};
+alert("Функциональное выражение: " + FunctionExpression());
+
+// 3. Стрелочная функция
+const getQuestionsCountArrow = () => {
+    const timeGrihaMinutes = 60;
+    const timeArtem = timeGrihaMinutes + 60;
+    const questionsArtemPerMinute = 14 / 60;
+    return questionsArtemPerMinute * timeArtem;
+};
+alert("Стрелочная функция: " + getQuestionsCountArrow());
+
+// 4. Функция с параметрами и возвратом
+function calculateQuestions(timeGriha, additionalTime, speedA) {
+    const timeArtem = timeGriha + additionalTime;
+    const questionsA = speedA * timeArtem;
+    return questionsA; // Количество вопросов
+}
+
+function getQuestionsCountWithParams() {
+    const timeGrihaMinutes = 60; // Время Гриши
+    const additionalTimeMinutes = 60; // Разница во времени
+    const speedAQuestionsPerMinutе = 14 / 60; // Скорость Артема
+    return calculateQuestions(timeGrihaMinutes, additionalTimeMinutes, speedAQuestionsPerMinutе);
+}
+alert("Функция с параметрами: " + getQuestionsCountWithParams());
+   </script>
+</body>
+</html>

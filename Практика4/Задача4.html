@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Проверка удара слона</title>
+</head>
+<body>
+    <h2>Проверка удара слона</h2>
+    <h3>Введите координаты Ладьи:</h3>
+    <label for="xLadia">строка:</label>
+    <input type="number" id="xLadia" placeholder="1-8"/>
+    <label for="yLadia">   стобец:</label>
+    <input type="number" id="yLadia" placeholder="1-8"/>
+    <br/><br/>
+    <h3>Введите координаты фигуры:</h3>
+    <label for="xFigura">строка:</label>
+    <input type="number" id="xFigura" placeholder="1-8"/>
+    <label for="yFigura">   стобец:</label>
+    <input type="number" id="yFigura" placeholder="1-8"/>
+    <br/><br/>
+    <button onclick="check()">УДАААР</button>
+    <p id="result"></p>
+
+    <script>
+        function check() {
+            const yLadiaInp = document.getElementById('yLadia').value;
+            const xLadiaInp = document.getElementById('xLadia').value;
+            const yFiguraInp = document.getElementById('yFigura').value;
+            const xFiguraInp = document.getElementById('xFigura').value;
+
+            const res = document.getElementById('result');
+            
+            const xL = parseInt(xLadiaInp);
+            const yL = parseInt(yLadiaInp);
+            const yF = parseInt(yFiguraInp);
+            const xF = parseInt(xFiguraInp);
+
+            if (isNaN(xL) || isNaN(yL) || isNaN(xF) || isNaN(yF) || xL < 1 || xL > 8 || yL < 1 || yL > 8 || xF < 1 || xF > 8 || yF < 1 || yF > 8 ) {
+                res.textContent = 'Пожалуйста, введите верные координаты (1-8)';
+                return;
+            }
+
+            if (Math.abs(xL-xF) === Math.abs(yL-yF)) {
+                res.textContent = 'Слон бьет фигуру!';
+            } else {
+                res.textContent = 'Слон не бьет фигуру!';
+            }
+        }
+    </script>
+</body>
+</html>

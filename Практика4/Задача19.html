@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>День недели</title>
+</head>
+<body>
+    <script>
+        const dayNumber = parseInt(prompt("Введите номер дня недели (1-7):"));
+
+        const days = [
+            "Понедельник",
+            "Вторник",
+            "Среда",
+            "Четверг",
+            "Пятница",
+            "Суббота",
+            "Воскресенье"
+        ];
+
+        if (dayNumber >= 1 && dayNumber <= 7) {
+            document.write(`<p>Это: <b>${days[dayNumber - 1]}</b></p>`);
+        } else {
+            document.write("<p style='color: red;'>Ошибка: нет такого дня недели.</p>");
+        }
+    </script>
+</body>
+</html>
